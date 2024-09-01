@@ -101,7 +101,7 @@ Given an array `nums` containing n distinct numbers in the range `[0, n]`, retur
 **Constraints**
 
 1. n == nums.length
-2. 1 <= n <= 104
+2. 1 <= n <= 10^4
 3. 0 <= nums[i] <= n
 4. All the numbers of nums are unique.
 
@@ -112,3 +112,42 @@ Given an array `nums` containing n distinct numbers in the range `[0, n]`, retur
 3. The third method is to use XOR, because the result of every number XOR itself is 0, so we can add a new array [0,1, ..., n], then XOR it with nums, the result will be the missing num.
 4. The fourth method to sum 1 to n, then subtracted by the sum of all elements in `nums`.
 5. The fifth method is to sort `nums` first, then if the missing number is `n`, `nums[n-1]` will not equal `n`, otherwise the missing num is the first element which does not match its index.
+
+# Valid Parentheses
+
+Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+1. Open brackets must be closed by the same type of brackets.
+2. Open brackets must be closed in the correct order.
+3. Every close bracket has a corresponding open bracket of the same type.
+
+**Example 1:**
+
+> **Input**: s = "()"  
+**Output**: true  
+
+**Example 2:**
+
+> **Input**: "()[]{}"  
+**Output**: true  
+
+**Example 3:**
+
+> **Input**: "(]"  
+**Output**: false
+
+**Example 4:**
+
+> **Input**: "([])"  
+**Output**: true
+
+**Constraints**
+
+1. 1 <= s.length <= 10^4
+2. s consists of parentheses only '()[]{}'.
+
+**Solutions**
+
+1. Whenever encountering an open parentheses, push its close parentheses into a stack, then if there is a close parentheses, pop the element out of the stack, if they are not equal, return false, the stack must be empty at last, or return false.
