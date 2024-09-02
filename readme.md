@@ -151,3 +151,37 @@ An input string is valid if:
 **Solutions**
 
 1. Whenever encountering an open parentheses, push its close parentheses into a stack, then if there is a close parentheses, pop the element out of the stack, if they are not equal, return false, the stack must be empty at last, or return false.
+
+# Merge Two Sorted List
+
+You are given the heads of two sorted linked lists `list1` and `list2`.
+
+Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+Return the head of the merged linked list.
+
+**Example 1:**
+
+> **Input**: list1 = [1,2,4], list2 = [1,3,4]  
+**Output**: [1,1,2,3,4,4]
+
+**Example 2:**
+
+> **Input**: list1 = [], list2 = []  
+**Output**: []
+
+**Example 3:**
+
+> **Input**: list1 = [], list2 = [0]  
+**Output**: [0]
+
+**Constraints**
+
+1. The number of nodes in both lists is in the range [0, 50].
+2. -100 <= Node.val <= 100
+3. Both list1 and list2 are sorted in non-decreasing order.
+
+**Solutions**
+
+1. Create a new list, go through `list1` and `list2`, compare the value, put the one with less value behind the new list, then move the pointer of the list with less value to the next, continuously compare until whichever of `list1` or `list2` reach `null`, attach the remaining of the other list to the end. 
+2. We can also use a recursion method which returns the node with the less `val`, and the node is followed by the result of the method with the rest list nodes as its parameters. 
