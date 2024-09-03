@@ -185,3 +185,35 @@ Return the head of the merged linked list.
 
 1. Create a new list, go through `list1` and `list2`, compare the value, put the one with less value behind the new list, then move the pointer of the list with less value to the next, continuously compare until whichever of `list1` or `list2` reach `null`, attach the remaining of the other list to the end. 
 2. We can also use a recursion method which returns the node with the less `val`, and the node is followed by the result of the method with the rest list nodes as its parameters. 
+
+# Subtree Of Another Tree
+
+Given the roots of two binary trees `root` and `subRoot`, return `true` if there is a subtree of `root` with the same structure and node values of `subRoot` and `false` otherwise.
+
+A subtree of a binary tree `tree` is a tree that consists of a node in `tree` and all of this node's descendants. The tree `tree` could also be considered as a subtree of itself.
+
+**Example 1:**
+
+![](/images/subtree1-tree.jpg)
+
+> **Input**: root = [3,4,5,1,2], subRoot = [4,1,2]  
+**Output**: true
+
+**Example 2:**
+
+![](/images/subtree2-tree.jpg)
+
+> **Input**: root = [3,4,5,1,2,null,null,null,null,0], subRoot = [4,1,2]  
+**Output**: false
+
+**Constraints**
+
+- The number of nodes in the `root` tree is in the range `[1, 2000]`.
+- The number of nodes in the subRoot tree is in the range `[1, 1000]`.
+- -10^4 <= root.val <= 10^4
+- -10^4 <= subRoot.val <= 10^4
+
+**Solutions**
+
+1. Write a function to identify if two Binary Trees are identical which means their root, left and right nodes are all identical, then traverse the `tree` to identify if there's a subtree in it which matches the `subTree`.
+2. Another method is using iterative to traverse the `tree` with the same function to act as the function which is used to identify the match of two trees.
