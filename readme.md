@@ -217,3 +217,31 @@ A subtree of a binary tree `tree` is a tree that consists of a node in `tree` an
 
 1. Write a function to identify if two Binary Trees are identical which means their root, left and right nodes are all identical, then traverse the `tree` to identify if there's a subtree in it which matches the `subTree`.
 2. Another method is using iterative to traverse the `tree` with the same function to act as the function which is used to identify the match of two trees.
+
+# Reverse Bits
+
+Reverse bits of a given 32 bits unsigned integer.
+
+**Note:**
+
+- Note that in some languages, such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.
+- In Java, the compiler represents the signed integers using `2's complement notation`. Therefore, in Example 2 above, the input represents the signed integer `-3` and the output represents the signed integer `-1073741825`.
+
+**Example 1:**
+
+> **Input**: n = 00000010100101000001111010011100  
+**Output**: 964176192 (00111001011110000010100101000000)
+
+**Example 2:**
+
+> **Input**: n = 11111111111111111111111111111101  
+**Output**: 3221225471 (10111111111111111111111111111111)
+
+**Constraints**
+
+- The input must be a binary string of length 32
+
+**Solutions**
+
+1. Use a stack to push all the bits into it, then pop out.
+2. Use mask and shift to revert.
