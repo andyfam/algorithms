@@ -311,4 +311,32 @@ Each time you can either climb `1` or `2` steps. In how many distinct ways can y
 1. use recursion, sum the ways for reaching `(n-1)` and `(n-2)`. However, this solution has exponential time complexity (O(2^n)) due to redundant calculations, in order to avoid redundancy, we need a map to store the processed `n`.
 2. note that the ways for reaching `n` is the sum of ways for reaching `(n-1)` and `(n-2)`, so we could iterate from `2` to `n` to get the final nums for `n`, in order to store these data, we could use an array or just two nums;
 
- 
+# Reverse Linked List
+
+Given the `head` of a singly linked list, reverse the list, and return the reversed list.
+
+**Example 1:**
+
+> **Input**:  head = [1,2,3,4,5]   
+**Output**: [5,4,3,2,1]
+
+**Example 2:**
+
+> **Input**:  head = [1,2]   
+**Output**: [2,1]
+
+**Example 3:**
+
+> **Input**:  head = []   
+**Output**: []
+
+**Constraints**
+
+- The number of nodes in the list is the range [0, 5000].
+- -5000 <= Node.val <= 5000
+
+**Solutions**
+
+1. use stack
+2. iterate the listnodes, reverse every node
+   ![](/images/reverselinkedlist.png)
