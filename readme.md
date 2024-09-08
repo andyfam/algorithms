@@ -277,4 +277,38 @@ Write a function that takes the binary representation of a positive integer and 
 
 1. convert the int into binary string, then count the number of `1`. 
 2. because n & (n-1) will reduce the number of `1` by 1, so loop execute it until n=0 will get the number of `1`.
-3. unsigned right shift the integer and check if the last right bit is `0` or not until the integer become 0
+3. unsigned right shift the integer and check if the last right bit is `0` or not until the integer become 0.
+
+# Climbing Stairs
+
+You are climbing a staircase. It takes `n` steps to reach the top.
+
+Each time you can either climb `1` or `2` steps. In how many distinct ways can you climb to the top?
+
+**Example 1:**
+
+> **Input**:  n = 2  
+**Output**: 2  
+**Explanation:** There are two ways to climb to the top.  
+    1. 1 step + 1 step  
+    2. 2 steps
+
+**Example 2:**
+
+> **Input**: n = 3  
+**Output**: 3  
+**Explanation:** There are three ways to climb to the top.  
+    1. 1 step + 1 step + 1 step  
+    2. 1 step + 2 steps
+    3. 2 steps + 1 step
+
+**Constraints**
+
+- 1 <= n <= 45
+
+**Solutions**
+
+1. use recursion, sum the ways for reaching `(n-1)` and `(n-2)`. However, this solution has exponential time complexity (O(2^n)) due to redundant calculations, in order to avoid redundancy, we need a map to store the processed `n`.
+2. note that the ways for reaching `n` is the sum of ways for reaching `(n-1)` and `(n-2)`, so we could iterate from `2` to `n` to get the final nums for `n`, in order to store these data, we could use an array or just two nums;
+
+ 
