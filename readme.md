@@ -340,3 +340,37 @@ Given the `head` of a singly linked list, reverse the list, and return the rever
 1. use stack
 2. iterate the listnodes, reverse every node
    ![](/images/reverselinkedlist.png)
+
+# Counting Bits
+
+Given an integer `n`, return an array `ans` of length `n + 1` such that for each i (0 <= i <= n), `ans[i]` is the number of `1's` in the binary representation of `i`.
+
+**Example 1:**
+
+> **Input**:  n = 2  
+**Output**: [0,1,1]  
+**Explanation:**  
+0 --> 0  
+1 --> 1  
+2 --> 10
+
+**Example 2:**
+
+> **Input**:  n = 5  
+**Output**: [0,1,1,2,1,2]  
+**Explanation:**  
+0 --> 0  
+1 --> 1  
+2 --> 10  
+3 --> 11  
+4 --> 100  
+5 --> 101
+
+**Constraints**
+
+- 0 <= n <= 10^5  
+
+**Solutions**
+
+1. create a function to calculate the number of 1's for an int
+2. as even number, the last unit is 0, so when you right shift, the number of 1 will not change, which means ans[i] = ans[i/2], as an odd number, because the last bit is 1, so when you right shift 1, the number of 1 will decrease 1, which means ans[i] = ans[i/2] + 1, as a result, ans[i] = ans[i/2] + i%2
