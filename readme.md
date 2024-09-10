@@ -374,3 +374,30 @@ Given an integer `n`, return an array `ans` of length `n + 1` such that for each
 
 1. create a function to calculate the number of 1's for an int
 2. as even number, the last unit is 0, so when you right shift, the number of 1 will not change, which means ans[i] = ans[i/2], as an odd number, because the last bit is 1, so when you right shift 1, the number of 1 will decrease 1, which means ans[i] = ans[i/2] + 1, as a result, ans[i] = ans[i/2] + i%2
+
+# Contains Duplicate
+
+Given an integer array `nums`, return `true` if any value appears at least twice in the array, and return `false` if every element is distinct.
+
+**Example 1:**
+
+> **Input**:  [1,2,3,1]  
+**Output**: true  
+**Explanation:**  The element 1 occurs at the indices 0 and 3.
+
+> **Input**:  [1,2,3,4]  
+**Output**: false  
+**Explanation:**  All elements are distinct.
+
+> **Input**:  [1,1,1,3,3,4,3,2,4,2]  
+**Output**: true  
+
+**Constraints**
+
+- 1 <= nums.length <= 10^5
+- -10^9 <= nums[i] <= 10^9
+
+**Solutions**
+
+1. use Hashset
+2. sort first, then check the adjacent elements
