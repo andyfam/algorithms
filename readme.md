@@ -496,3 +496,31 @@ A binary tree's maximum depth is the number of nodes along the longest path from
 **Solutions**
 
 1. if the node has left or right, then the depth plus one, use recursion
+
+# Valid Anagram
+
+Given two strings `s` and `t`, return true if `t` is an anagram of `s`, and false otherwise.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, using all the original letters exactly once.
+
+**Example 1:**
+
+> **Input**:  s = "anagram", t = "nagaram"  
+**Output**: true
+
+**Example 2:**
+
+> **Input**:  s = "rat", t = "car"  
+**Output**: false
+
+**Constraints**
+
+- 1 <= s.length, t.length <= 5 * 10^4
+- s and t consist of lowercase English letters
+
+**Solutions**
+
+1. iterate `t`, check if all char are contained in `s`, then use String.replaceFirst to remove the char from `s`, `s` should be empty after the iteration.
+2. sort two string, then they must be equal
+3. using hashmap, key is char in `s`, value is the count of the char, iterate `t`, then decrease the count of the char by 1, the values of all keys in hashmap must be zero.
+4. similar to the hashmap, but using a int[], because all char are lowercase letters, so subtracted the char by `a`, the results all located between 0 to 26,so initialize an int[] with length 26 to store the count.
