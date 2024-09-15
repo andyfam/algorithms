@@ -524,3 +524,38 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 2. sort two string, then they must be equal
 3. using hashmap, key is char in `s`, value is the count of the char, iterate `t`, then decrease the count of the char by 1, the values of all keys in hashmap must be zero.
 4. similar to the hashmap, but using a int[], because all char are lowercase letters, so subtracted the char by `a`, the results all located between 0 to 26,so initialize an int[] with length 26 to store the count.
+
+# Merge String Alternatively
+
+You are given two strings `word1` and `word2`. Merge the strings by adding letters in alternating order, starting with `word1`. If a string is longer than the other, append the additional letters onto the end of the merged string.
+
+Return the merged string.
+
+**Example 1:**
+
+> **Input**:  word1 = "abc", word2 = "pqr"  
+**Output**: "apbqcr"  
+**Explanation**: The merged string will be merged as so:  
+word1:  a   b   c  
+word2:    p   q   r  
+merged: a p b q c r
+
+**Example 2:**
+
+> **Input**:  word1 = "ab", word2 = "pqrs"  
+**Output**: "apbqrs"
+
+**Example 3:**
+
+> **Input**:  word1 = "abcd", word2 = "pq"  
+**Output**: "apbqcd"
+
+
+**Constraints**
+
+- 1 <= word1.length, word2.length <= 100
+- word1 and word2 consist of lowercase English letters.
+
+**Solutions**
+
+1. initialize a new char array, iterate `word1` and `word2`, put the char into the new array alternatively. 
