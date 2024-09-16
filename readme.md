@@ -550,7 +550,6 @@ merged: a p b q c r
 > **Input**:  word1 = "abcd", word2 = "pq"  
 **Output**: "apbqcd"
 
-
 **Constraints**
 
 - 1 <= word1.length, word2.length <= 100
@@ -559,3 +558,34 @@ merged: a p b q c r
 **Solutions**
 
 1. initialize a new char array, iterate `word1` and `word2`, put the char into the new array alternatively. 
+
+# Greatest Common Divisor of Strings
+
+For two strings s and t, we say "t divides s" if and only if s = t + t + t + ... + t + t (i.e., t is concatenated with itself one or more times).
+
+Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
+
+**Example 1:**
+
+> **Input**:  str1 = "ABCABC", str2 = "ABC"  
+**Output**: "ABC"  
+
+**Example 2:**
+
+> **Input**:  str1 = "ABABAB", str2 = "ABAB"  
+**Output**: "AB"
+
+**Example 3:**
+
+> **Input**:  str1 = "LEET", str2 = "CODE"  
+**Output**: ""
+
+**Constraints**
+
+- 1 <= str1.length, str2.length <= 1000
+- str1 and str2 consist of English uppercase letters.
+
+**Solutions**
+
+1. iterate the shorter one of `str1` and `str2`, check if it can divides the two, can use replaceAll(), less 1 letter every loop until empty string
+2. if str1 and str2 have GCD string, ten str1 + str2 == str2 + str1, and the length of the GCD string must be gcd(length(str1), length(str2))
