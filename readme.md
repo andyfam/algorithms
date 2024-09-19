@@ -658,3 +658,30 @@ Given an integer array flowerbed containing 0's and 1's, where 0 means empty and
 **Solutions**
 
 1. iterate the array, count the number of `0` which the adjacents are not `1`
+
+# Reverse Vowels of a String
+
+Given a string s, reverse only all the vowels in the string and return it.
+
+The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.
+
+**Example 1:**
+
+> **Input**:   s = "IceCreAm"  
+**Output**: "AceCreIm"  
+**Explanation:** The vowels in s are ['I', 'e', 'e', 'A']. On reversing the vowels, s becomes "AceCreIm".  
+
+**Example 2:**
+
+> **Input**:  "leetcode"  
+**Output**: "leotcede"
+
+**Constraints**
+
+- 1 <= s.length <= 3 * 105
+- s consist of printable ASCII characters.
+
+**Solutions**
+
+1. iterate the array, push all the vowels into a stack, then iterate the string again, replace the vowels in the string with the popped vowels.
+2. we can use two pointers, one from the start, the other from the end of the string, then move toward each other, whenever encounter a vowel, we exchange them, until the two meet.
