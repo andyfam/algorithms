@@ -739,7 +739,7 @@ Given an integer array nums, return an array answer such that answer[i] is equal
 
 **Constraints**
 
-- 2 <= nums.length <= 105
+- 2 <= nums.length <= 10^5
 - -30 <= nums[i] <= 30
 
 **Solutions**
@@ -748,3 +748,34 @@ Given an integer array nums, return an array answer such that answer[i] is equal
 2. iterate the array, get the product of all elements, then iterate again, divide the product with the element itself to get the result, be concern about the 0, if the array has 1 0, every other elements will be 0 except 0 itself, if array has more than one 0, then results will be all 0.
 3. initialize two new arrays, store the product of the prefix elements and suffix elements of the element individually, then iterate again to get the final product of the element by multiplying the prefix and suffix.
 4. based on the previous solution, we can just use one array to store prefix, suffix and final results to optimize the space complexity.
+
+# Increasing Triplet Subsequence
+
+Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
+
+**Example 1:**
+
+> **Input**: nums = [1,2,3,4,5]
+**Output**: true  
+**Explanation**: Any triplet where i < j < k is valid.
+
+**Example 2:**
+
+> **Input**:  nums = [5,4,3,2,1]  
+**Output**: false
+**Explanation**: No triplet exists.
+
+**Example 3:**
+
+> **Input**:  nums = [2,1,5,0,4,6]  
+**Output**: true
+**Explanation**: The triplet (3, 4, 5) is valid because nums[3] == 0 < nums[4] == 4 < nums[5] == 6.
+
+**Constraints**
+
+- 1 <= nums.length <= 5 * 10^5
+- -2^31 <= nums[i] <= 2^31 - 1
+
+**Solutions**
+
+1. initialize two variables a and b, store the smallest and second smallest value, if a value which is bigger than them found, then return true
