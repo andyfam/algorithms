@@ -723,3 +723,28 @@ Note that s may contain leading or trailing spaces or multiple spaces between tw
 
 1. spit the string by space to an word array, then iterate the array from the end to the head concatenated with a space
 
+# Product Of Array Except Self
+
+Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+
+**Example 1:**
+
+> **Input**: nums = [1,2,3,4]
+**Output**: [24,12,8,6]
+
+**Example 2:**
+
+> **Input**:  nums = [-1,1,0,-3,3]  
+**Output**: [0,0,9,0,0]  
+
+**Constraints**
+
+- 2 <= nums.length <= 105
+- -30 <= nums[i] <= 30
+
+**Solutions**
+
+1. iterate every element, calculate the results by multiply other elements.
+2. iterate the array, get the product of all elements, then iterate again, divide the product with the element itself to get the result, be concern about the 0, if the array has 1 0, every other elements will be 0 except 0 itself, if array has more than one 0, then results will be all 0.
+3. initialize two new arrays, store the product of the prefix elements and suffix elements of the element individually, then iterate again to get the final product of the element by multiplying the prefix and suffix.
+4. based on the previous solution, we can just use one array to store prefix, suffix and final results to optimize the space complexity.
