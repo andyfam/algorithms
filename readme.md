@@ -820,3 +820,30 @@ You must write an algorithm that uses only constant extra space.
 **Solutions**
 
 1. iterate the array, use an int to store the count of the consecutive letters, if the next character is not the same as previous character then write the count of the previous letter and the new character into array, reset the count to 1, else plus the count by one until reach the end of the array, then write the count, use a tmp character to store the previous character, and an int to store the current index used for write into the count and new letter.
+
+# Move Zeros
+
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+Note that you must do this in-place without making a copy of the array.
+
+**Example 1:**
+
+> **Input**: nums = [0,1,0,3,12]  
+**Output**: [1,3,12,0,0]  
+
+**Example 2:**
+
+> **Input**:  nums = [0]  
+**Output**: [0]
+
+**Constraints**
+
+- 1 <= nums.length <= 10^4
+- -2^31 <= nums[i] <= 2^31 - 1
+
+**Solutions**
+
+1. use two pointer a and b, iterate the two points, if `a` points to zero, `b` points non-zero and `a` before `b`, then change them, else make `b` after `a`,  continue iterate until either of them reach the end.
+2. or we can iterate the array, put all non-zeros to the start position one by one, use a pointer to store the current place where the next non-zero will be located, then filled all the lefted elements with zero.
+3. or we can just replace all the elements at the start of the array with non-zeros one by one,use a pointer to store the current place to be replaced.
