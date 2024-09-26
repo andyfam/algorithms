@@ -847,3 +847,29 @@ Note that you must do this in-place without making a copy of the array.
 1. use two pointer a and b, iterate the two points, if `a` points to zero, `b` points non-zero and `a` before `b`, then change them, else make `b` after `a`,  continue iterate until either of them reach the end.
 2. or we can iterate the array, put all non-zeros to the start position one by one, use a pointer to store the current place where the next non-zero will be located, then filled all the lefted elements with zero.
 3. or we can just replace all the elements at the start of the array with non-zeros one by one,use a pointer to store the current place to be replaced.
+
+# Is Subsequence
+
+Given two strings s and t, return true if s is a subsequence of t, or false otherwise.
+
+A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+
+**Example 1:**
+
+> **Input**: s = "abc", t = "ahbgdc"  
+**Output**: true  
+
+**Example 2:**
+
+> **Input**:  s = "axc", t = "ahbgdc"   
+**Output**: false  
+
+**Constraints**
+
+- 0 <= s.length <= 100
+- 0 <= t.length <= 10^4
+- s and t consist only of lowercase English letters.
+
+**Solutions**
+
+1. use two pointer `a` and `b`, points to `s` and `t` respectively, iterate `b`, if the elements pointed are the same, then remove the pointer `a` forward by one step, until `b` or `a` to the end, return true if `a` to the end.
