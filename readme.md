@@ -906,3 +906,40 @@ Notice that you may not slant the container.
 **Solutions**
 
 1. use two pointers `a` and `b`, points to the left and right respectively, only move the lower point until two points meet, calculate the amount of every container, the result will be the largest.
+
+# Max Number Of K-Sum Pairs
+
+You are given an integer array `nums` and an integer `k`.
+
+In one operation, you can pick two numbers from the array whose sum equals `k` and remove them from the array.
+
+Return the maximum number of operations you can perform on the array.
+
+**Example 1:**
+
+> **Input**: nums = [1,2,3,4], k = 5    
+**Output**: 2  
+**Explanation**: Starting with nums = [1,2,3,4]:  
+-Remove numbers 1 and 4, then nums = [2,3]  
+-Remove numbers 2 and 3, then nums = []  
+There are no more pairs that sum up to 5, hence a total of 2 operations.
+
+**Example 2:**
+
+> **Input**: nums = [3,1,3,4,3], k = 6    
+**Output**: 1    
+**Explanation**: Starting with nums = [3,1,3,4,3]:  
+Remove the first two 3's, then nums = [1,4,3]  
+There are no more pairs that sum up to 6, hence a total of 1 operation.
+
+**Constraints**
+
+- 1 <= nums.length <= 10^5
+- 1 <= nums[i] <= 10^9
+- 1 <= k <= 10^9
+
+**Solutions**
+
+1. iterate the array, put element into a hashmap, key is the distinct element, value is the count of the element, check if `k - element` exists in the map, if exists add the total count by one, and subtract the value by 1;
+2. put the array into a hashmap, key is the distinct element of the array, value is the count of the distinct element, then iterate the hashmap, count the total count. 
+3. or we can sort the array first, then initial two points `low` and `high`, sum the `nums[low]` and `nums[high]`, if result equals `k` then `total++`, else if the result greater than `k`, then move the `high` backward, else move the `low` forward, until `low = high`. 
