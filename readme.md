@@ -943,3 +943,30 @@ There are no more pairs that sum up to 6, hence a total of 1 operation.
 1. iterate the array, put element into a hashmap, key is the distinct element, value is the count of the element, check if `k - element` exists in the map, if exists add the total count by one, and subtract the value by 1;
 2. put the array into a hashmap, key is the distinct element of the array, value is the count of the distinct element, then iterate the hashmap, count the total count. 
 3. or we can sort the array first, then initial two points `low` and `high`, sum the `nums[low]` and `nums[high]`, if result equals `k` then `total++`, else if the result greater than `k`, then move the `high` backward, else move the `low` forward, until `low = high`. 
+
+# Max Average Subarray I
+
+You are given an integer array `nums` consisting of `n` elements, and an integer `k`.
+
+Find a contiguous subarray whose length is equal to `k` that has the maximum average value and return this value. Any answer with a calculation error less than 10^-5 will be accepted.
+
+**Example 1:**
+
+> **Input**: nums = [1,12,-5,-6,50,3], k = 4    
+**Output**: 12.75000  
+**Explanation**: Maximum average is (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
+
+**Example 2:**
+
+> **Input**: nums = [5], k = 1      
+**Output**: 5.00000  
+
+**Constraints**
+
+- n == nums.length
+- 1 <= k <= n <= 10^5
+- -10^4 <= nums[i] <= 10^4
+
+**Solutions**
+
+1. initialize the sliding window with the sum from index `0` to `k-1`, then iterate the array from `1` to `n-k`, calculate the new sliding window by the value of index `i-1` and `i+(k-1)`
