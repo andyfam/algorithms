@@ -970,3 +970,37 @@ Find a contiguous subarray whose length is equal to `k` that has the maximum ave
 **Solutions**
 
 1. initialize the sliding window with the sum from index `0` to `k-1`, then iterate the array from `1` to `n-k`, calculate the new sliding window by the value of index `i-1` and `i+(k-1)`
+
+# Maximum Number Of Vowels In A Substring Of Given Length
+
+Given a string `s` and an integer `k`, return the maximum number of vowel letters in any substring of `s` with length `k`.
+
+Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
+
+**Example 1:**
+
+> **Input**: s = "abciiidef", k = 3    
+**Output**: 3   
+**Explanation**: The substring "iii" contains 3 vowel letters.
+
+**Example 2:**
+
+> **Input**: s = "aeiou", k = 2      
+**Output**: 2
+**Explanation**: Any substring of length 2 contains 2 vowels.
+
+**Example 3:**
+
+> **Input**: s = "leetcode", k = 3      
+**Output**: 2
+**Explanation**: "lee", "eet" and "ode" contain 2 vowels.
+
+**Constraints**
+
+- 1 <= s.length <= 10^5
+- `s` consists of lowercase English letters.
+- 1 <= k <= s.length
+
+**Solutions**
+
+1. calculate the number of the vowels in the first sliding window, then iterate the array, add or subtract by checking the `i-1` and `i+(k-1)` 
