@@ -986,13 +986,13 @@ Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
 **Example 2:**
 
 > **Input**: s = "aeiou", k = 2      
-**Output**: 2
+**Output**: 2  
 **Explanation**: Any substring of length 2 contains 2 vowels.
 
 **Example 3:**
 
 > **Input**: s = "leetcode", k = 3      
-**Output**: 2
+**Output**: 2  
 **Explanation**: "lee", "eet" and "ode" contain 2 vowels.
 
 **Constraints**
@@ -1004,3 +1004,31 @@ Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
 **Solutions**
 
 1. calculate the number of the vowels in the first sliding window, then iterate the array, add or subtract by checking the `i-1` and `i+(k-1)` 
+
+# Max consecutive Ones III
+
+Given a binary array `nums` and an integer `k`, return the maximum number of consecutive `1`'s in the array if you can flip at most `k` `0`'s.
+
+**Example 1:**
+
+> **Input**: nums = [1,1,1,0,0,0,1,1,1,1,0], k = 2      
+**Output**: 6   
+**Explanation**: [1,1,1,0,0,<ins>**1**,1,1,1,1,**1**</ins>]  
+Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+
+**Example 2:**
+
+> **Input**: nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], k = 3      
+**Output**: 10  
+**Explanation**: [0,0,<ins>1,1,**1**,**1**,1,1,1,**1**,1,1,</ins>0,0,0,1,1,1,1]  
+Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+
+**Constraints**
+
+- 1 <= nums.length <= 10^5
+- nums[i] is either 0 or 1.
+- 0 <= k <= nums.length
+
+**Solutions**
+
+1. to calculate the size of the max sliding window with no more than `k`'s of `0`, we could use two pointer `begin` and `end`, move the `end`, until the number of `0` greater than `k`, then move the two together, now the number of the max window is `end` subtract `begin`, because we've already excess the limitation of `0`, when we move the pointers, increase the number of `0` whenever `end` encounter `0`, and decrease whenever `begin` encounter `0`, if the number below or equals `k` then we stop moving `begin`, everytime when moving, record the max size of the window, until `end` reaches the end, return the max size of the window.
