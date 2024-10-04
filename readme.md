@@ -1032,3 +1032,36 @@ Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
 **Solutions**
 
 1. to calculate the size of the max sliding window with no more than `k`'s of `0`, we could use two pointer `begin` and `end`, move the `end`, until the number of `0` greater than `k`, then move the two together, now the number of the max window is `end` subtract `begin`, because we've already excess the limitation of `0`, when we move the pointers, increase the number of `0` whenever `end` encounter `0`, and decrease whenever `begin` encounter `0`, if the number below or equals `k` then we stop moving `begin`, everytime when moving, record the max size of the window, until `end` reaches the end, return the max size of the window.
+
+# Longest Subarray Of Ones After Deleting One Element
+
+Given a binary array `nums`, you should delete one element from it.
+
+Return the size of the longest non-empty subarray containing only `1`'s in the resulting array. Return `0` if there is no such subarray.
+
+**Example 1:**
+
+> **Input**: nums = [1,1,0,1]        
+**Output**: 3   
+**Explanation**: After deleting the number in position 2, [1,1,1] contains 3 numbers with value of 1's.  
+
+**Example 2:**
+
+> **Input**: nums = [0,1,1,1,0,1,1,0,1]  
+**Output**: 5  
+**Explanation**: After deleting the number in position 4, [0,1,1,1,1,1,0,1] longest subarray with value of 1's is [1,1,1,1,1].  
+
+**Example 3:**
+
+> **Input**: nums = [1,1,1]  
+**Output**: 2    
+**Explanation**: You must delete one element.  
+
+**Constraints**
+
+- 1 <= nums.length <= 10^5
+- nums[i] is either 0 or 1.
+
+**Solutions**
+
+1. the question could be translated into finding out the biggest sliding window of `1`s with only one `0` or no `0`, but we need to subtract the result by 1.
