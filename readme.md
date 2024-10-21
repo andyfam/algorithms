@@ -1199,3 +1199,46 @@ Given an array of integers `arr`, return true if the number of occurrences of ea
 **Solutions**
 
 1. iterate the array, initialize a hashmap, put the value into the key and the number of occurrences into value, then iterate the hashmap, put the values into a hashset to check if the number of occurrences is unique or not. 
+
+# Determine if Two Strings are close
+
+Two strings are considered close if you can attain one from the other using the following operations:
+
+Operation 1: Swap any two existing characters.
+For example, `abcde -> aecdb`
+Operation 2: Transform every occurrence of one existing character into another existing character, and do the same with the other character.
+For example, `aacabb -> bbcbaa` (all a's turn into b's, and all b's turn into a's)
+You can use the operations on either string as many times as necessary.
+
+Given two strings, `word1` and `word2`, return true if `word1` and `word2` are close, and false otherwise.
+
+> **Input**: word1 = "abc", word2 = "bca"  
+**Output**: true  
+**Explanation**:  You can attain word2 from word1 in 2 operations.  
+Apply Operation 1: "abc" -> "acb"  
+Apply Operation 1: "acb" -> "bca"
+
+**Example 2:**
+
+> **Input**: word1 = "a", word2 = "aa"  
+**Output**: false  
+**Explanation**: It is impossible to attain word2 from word1, or vice versa, in any number of operations.
+
+**Example 3:**
+
+> **Input**: word1 = "cabbba", word2 = "abbccc"  
+**Output**: true  
+**Explanation**: You can attain word2 from word1 in 3 operations.  
+Apply Operation 1: "cabbba" -> "caabbb"  
+Apply Operation 2: "caabbb" -> "baaccc"  
+Apply Operation 2: "baaccc" -> "abbccc"
+
+**Constraints**
+
+- 1 <= word1.length, word2.length <= 10^5
+- word1 and word2 contain only lowercase English letters.
+
+**Solutions**
+
+1. operation one means the order of the letters doesn't matter, only if the two strings have the same distinct letters, operation two means the occurrences of the letters doesn't matter only if the occurrences have the same values, so we can iterate the two strings and put them into two hashmap, the key stores the letter and the value stores the occurrences, then to check if every keys in map1 contained in map2, and every value in map1 contained in map2 and vice verse. 
+2. or we can use two int arrays to store the occurrences of every distinct letters in the two strings.
